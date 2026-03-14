@@ -12,6 +12,7 @@ build/
 
 # Android Studio
 .idea/
+.vscode/
 *.iml
 
 # Arquivos de usuário
