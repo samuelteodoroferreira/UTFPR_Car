@@ -40,6 +40,13 @@ import com.example.ftprcar.data.api.toUserError
 import com.example.ftprcar.data.model.Car
 import com.example.ftprcar.data.model.Place
 import com.example.ftprcar.ui.theme.FTPRCarTheme
+import com.google.android.gms.maps.model.CameraPosition
+import com.google.android.gms.maps.model.LatLng
+import com.google.maps.android.compose.GoogleMap
+import com.google.maps.android.compose.Marker
+import com.google.maps.android.compose.MarkerState
+import com.google.maps.android.compose.rememberCameraPositionState
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 class CarDetailActivity : ComponentActivity() {
@@ -378,6 +385,13 @@ fun CarDetailScreen(
                 }
 
                 if (hasLocation) {
+                    val place = car.place!!
+                    val latLng = LatLng(place.lat, place.lng)
+                    var mapReady by remember { mutableStateOf(false) }
+                    LaunchedEffect(Unit) {
+                        delay(150)
+                        mapReady = true
+                    }
                     Spacer(modifier = Modifier.height(20.dp))
                     Row(
                         verticalAlignment = Alignment.CenterVertically,
@@ -404,31 +418,39 @@ fun CarDetailScreen(
                             containerColor = MaterialTheme.colorScheme.surfaceVariant
                         )
                     ) {
-                        Column(
-                            modifier = Modifier
-                                .fillMaxSize()
-                                .padding(20.dp),
-                            horizontalAlignment = Alignment.CenterHorizontally,
-                            verticalArrangement = Arrangement.Center
-                        ) {
-                            Text(
-                                text = "Latitude: ${(car.place?.lat ?: 0.0)}",
-                                style = MaterialTheme.typography.bodyMedium
-                            )
-                            Text(
-                                text = "Longitude: ${(car.place?.lng ?: 0.0)}",
-                                style = MaterialTheme.typography.bodyMedium
-                            )
-                            Spacer(modifier = Modifier.height(16.dp))
-                            FilledTonalButton(onClick = { onOpenMap(car.place) }) {
-                                Icon(
-                                    imageVector = Icons.Default.Map,
-                                    contentDescription = null
+                        if (mapReady) {
+                            val cameraPositionState = rememberCameraPositionState {
+                                position = CameraPosition.fromLatLngZoom(latLng, 14f)
+                            }
+                            GoogleMap(
+                                modifier = Modifier.fillMaxSize(),
+                                cameraPositionState = cameraPositionState
+                            ) {
+                                Marker(
+                                    state = MarkerState(position = latLng),
+                                    title = car.name
                                 )
-                                Spacer(modifier = Modifier.width(8.dp))
-                                Text("Abrir no mapa")
+                            }
+                        } else {
+                            Box(
+                                modifier = Modifier.fillMaxSize(),
+                                contentAlignment = Alignment.Center
+                            ) {
+                                CircularProgressIndicator(
+                                    modifier = Modifier.size(32.dp),
+                                    strokeWidth = 2.dp
+                                )
                             }
                         }
+                    }
+                    Spacer(modifier = Modifier.height(12.dp))
+                    FilledTonalButton(onClick = { onOpenMap(car.place) }) {
+                        Icon(
+                            imageVector = Icons.Default.Map,
+                            contentDescription = null
+                        )
+                        Spacer(modifier = Modifier.width(8.dp))
+                        Text("Abrir no Google Maps")
                     }
                 }
             }
