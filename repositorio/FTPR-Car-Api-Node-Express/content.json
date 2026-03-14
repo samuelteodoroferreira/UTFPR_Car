@@ -1,0 +1,112 @@
+[
+  {
+    "imageUrl": "https://loremflickr.com/640/480/car?lock=1",
+    "year": "2020/2021",
+    "name": "Carro A",
+    "licence": "ABC-1234",
+    "place": {
+      "lat": -23.5505,
+      "long": -46.6333
+    },
+    "id": "001"
+  },
+  {
+    "id": "002",
+    "imageUrl": "https://loremflickr.com/640/480/car?lock=2",
+    "year": "2019/2020",
+    "name": "Carro B",
+    "licence": "DEF-5678",
+    "place": {
+      "lat": -22.9068,
+      "long": -43.1729
+    }
+  },
+  {
+    "id": "003",
+    "imageUrl": "https://loremflickr.com/640/480/car?lock=3",
+    "year": "2018/2018",
+    "name": "Carro C",
+    "licence": "GHI-9012",
+    "place": {
+      "lat": -19.9167,
+      "long": -43.9345
+    }
+  },
+  {
+    "id": "004",
+    "imageUrl": "https://loremflickr.com/640/480/car?lock=4",
+    "year": "2021/2021",
+    "name": "Carro D",
+    "licence": "JKL-3456",
+    "place": {
+      "lat": -15.7801,
+      "long": -47.9292
+    }
+  },
+  {
+    "id": "005",
+    "imageUrl": "https://loremflickr.com/640/480/car?lock=5",
+    "year": "2020/2020",
+    "name": "Carro E",
+    "licence": "MNO-7890",
+    "place": {
+      "lat": -12.9714,
+      "long": -38.5014
+    }
+  },
+  {
+    "id": "006",
+    "imageUrl": "https://loremflickr.com/640/480/car?lock=6",
+    "year": "2017/2018",
+    "name": "Carro F",
+    "licence": "PQR-2345",
+    "place": {
+      "lat": -8.0476,
+      "long": -34.877
+    }
+  },
+  {
+    "id": "007",
+    "imageUrl": "https://loremflickr.com/640/480/car?lock=7",
+    "year": "2019/2020",
+    "name": "Carro G",
+    "licence": "STU-6789",
+    "place": {
+      "lat": -1.4558,
+      "long": -48.4902
+    }
+  },
+  {
+    "id": "008",
+    "imageUrl": "https://loremflickr.com/640/480/car?lock=8",
+    "year": "2022/2023",
+    "name": "Carro H",
+    "licence": "VWX-1234",
+    "place": {
+      "lat": -3.119,
+      "long": -60.0217
+    }
+  },
+  {
+    "id": "009",
+    "imageUrl": "https://loremflickr.com/640/480/car?lock=9",
+    "year": "2020/2021",
+    "name": "Carro I",
+    "licence": "YZA-5678",
+    "place": {
+      "lat": -25.4284,
+      "long": -49.2733
+    }
+  },
+  {
+    "id": "010",
+    "imageUrl": "https://loremflickr.com/640/480/car?lock=10",
+    "year": "2021/2022",
+    "name": "Carro J",
+    "licence": "BCD-9012",
+    "place": {
+      "lat": -27.5954,
+      "long": -48.548
+    }
+  }
+]

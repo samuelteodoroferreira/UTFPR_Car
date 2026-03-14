@@ -1,0 +1,4 @@
+# Copie a chave abaixo para o seu `local.properties` local.
+# Nao versione o arquivo `local.properties` real.
+GOOGLE_MAPS_API_KEY=YOUR_GOOGLE_MAPS_API_KEY
+API_BASE_URL=http://10.0.2.2:3000/

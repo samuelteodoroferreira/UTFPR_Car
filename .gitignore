@@ -1,0 +1,18 @@
+# Local configuration (contém chaves de API - NÃO versionar)
+local.properties
+app/google-services.json
+google-services.json
+*.jks
+*.keystore
+
+# Gradle
+.gradle/
+build/
+*/build/
+
+# Android Studio
+.idea/
+*.iml
+
+# Arquivos de usuário
+*.user
